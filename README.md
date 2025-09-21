@@ -8,7 +8,7 @@ header-includes:
 El objetivo de esta práctica es entender y familiarizarse con los 3 tipos de criptografía: simétrica, asimétrica y hash. Sobre estos de criptografías es que se implementan los sistemas de seguridad digitales que usamos a diario.
 
 ### Preparación del Entorno
-Para esta práctica utilizaremos `opensssl` que es una herramienta de línea de comandos que nos permite realizar operaciones criptográficas. En la mayoria de las distribuciones de Linux, incluyendo la maquina virtual proporcionada, `openssl` ya viene instalado. Si no lo tienes instalado, puedes hacerlo usando el gestor de paquetes de tu distribución. Por ejemplo, en Debian/Ubuntu puedes usar:
+Para esta práctica utilizaremos `openssl` que es una herramienta de línea de comandos que nos permite realizar operaciones criptográficas. En la mayoria de las distribuciones de Linux, incluyendo la maquina virtual proporcionada, `openssl` ya viene instalado. Si no lo tienes instalado, puedes hacerlo usando el gestor de paquetes de tu distribución. Por ejemplo, en Debian/Ubuntu puedes usar:
 
 ```bash
 sudo apt-get install openssl
@@ -104,8 +104,6 @@ Sea:
 - $m$: Mensaje de entrada
 - $h$: Hash del mensaje
 - $n$: Longitud del hash
-- $m'$: Mensaje modificado
-- $h'$: Hash del mensaje modificado
 
 \begin{center}
 \includegraphics[width=0.5\linewidth]{img/hash.png}
@@ -130,7 +128,7 @@ La criptografía se relaciona estrechamente con los principios de la seguridad i
 ---
 
 ### Entregable
-A continuación os detallo los elementos que deberéis entregar para esta práctica. El código/comandos necesarios lo teneis disponible y explicado en la carpeta de `Ejemplos/`. Buscad/cread archivos a utilizar en cada parte, pueden ser cualquier cosa, fragmentos de un libro en txt, un pdf, un word, uma imagen, un video, etc. Solo tened en cuenta que el cifrado asimétrico tiene limitaciones en el tamaño de los archivos que puede cifrar. Ademas puede llegar a ser bastante lento. Por esto utilizaremos cifrado hibrido en la parte 4.
+A continuación os detallo los elementos que deberéis entregar para esta práctica. El código/comandos necesarios lo teneis disponible y explicado en la carpeta de `Ejemplos/`. Buscad o cread archivos a utilizar en cada parte, pueden ser cualquier cosa, fragmentos de un libro en txt, un pdf, un word, uma imagen, un video, etc. Solo tened en cuenta que el cifrado asimétrico tiene limitaciones en el tamaño de los archivos que puede cifrar. Ademas puede llegar a ser bastante lento. Por esto utilizaremos cifrado hibrido en la parte 4.
 
 #### Parte 1: Criptografía Simétrica
 En esta parte de la práctica, deberás generar una clave simétrica utilizando el algoritmo AES con una longitud de clave de 256 bits. Luego, utilizarás esta clave para cifrar un archivo. Debereis entregar tanto el archivo original, como el archivo cifrado y la clave utilizada. Para comprobar que todo funciona correctamente recomiendo intentar descifrar en archivo cifrado y comprobar que resulta en el archivo original.
@@ -174,14 +172,20 @@ Deberás entregar un archivo comprimido (zip) con el nombre `Practica1SI-<tu_nom
     - `<archivo>`                     (Archivo utilizado para esta parte)
     - `asimetrica.priv`               (Clave privada generada)
     - `asimetrica.pub`                (Clave pública generada)
-    - `<archivo>.sig`                 (Archivo encriptado con la clave privada)
+    - `<archivo>.enc`                 (Archivo encriptado con la clave privada)
   - `Parte3/`
     - `<archivo>`                     (Archivo utilizado para esta parte)
     - `<archivo>.hash`                (Hash del archivo utilizado)
     - `<archivo_modificado>`          (Archivo utilizado para esta parte)
     - `<archivo_modificado>.hash`     (Hash del archivo utilizado)
   - `Parte4/`
-    - `firma.sh`                      (script con los comandos de la parte 4)
-    - `README.md`                     (explicación de los comandos y resultados obtenidos)
+    - `<archivo>`                     (Archivo utilizado para esta parte)
+    - `firma.priv`                    (Clave privada utilizada para la firma)
+    - `firma.pub`                     (Clave pública utilizada para la firma)
+    - `<archivo>.hash`                (Hash del archivo utilizado)
+    - `<archivo>.hash.sig`            (Firma del hash)
+    - `<archivo>.zip`                 (Comprimido con el archivo original y la firma del hash)
+    - `cifrado.key`                 (Clave simétrica cifrada)
+    - `<archivo>.zip.enc`             (Comprimido encriptado)
 
 ---
