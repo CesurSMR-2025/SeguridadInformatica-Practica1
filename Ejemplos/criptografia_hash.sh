@@ -1,4 +1,4 @@
-# Ejemplos de cifrado hash con sha256sum
+# Ejemplos de criptografía hash con sha256sum
 
 # sha256sum es una utilidad que calcula y verifica hashes SHA-256
 # archivos/Texto.txt es el archivo de entrada
