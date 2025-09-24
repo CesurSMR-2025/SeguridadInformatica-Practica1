@@ -19,5 +19,9 @@ openssl enc -aes-256-cbc -pbkdf2 -k "mi_contraseña" -in archivos/Texto.txt -out
 # -out especifica el archivo de salida para el archivo descifrado
 openssl enc -d -aes-256-cbc -pbkdf2 -k "mi_contraseña" -in archivos/Texto.txt.enc -out archivos/Texto.txt.dec
 
+# Tambien es posible pasar la contraseña desde un archivo
+openssl enc -aes-256-cbc -pbkdf2 -pass file:cifrado.key -in archivos/Texto.txt -out archivos/Texto.txt.enc
+
+
 # Verifica que el archivo descifrado es igual al original
 diff archivos/Texto.txt archivos/Texto.txt.dec

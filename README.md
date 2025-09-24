@@ -131,12 +131,12 @@ La criptografía se relaciona estrechamente con los principios de la seguridad i
 A continuación os detallo los elementos que deberéis entregar para esta práctica. El código/comandos necesarios lo teneis disponible y explicado en la carpeta de `Ejemplos/`. Buscad o cread archivos a utilizar en cada parte, pueden ser cualquier cosa, fragmentos de un libro en txt, un pdf, un word, uma imagen, un video, etc. Solo tened en cuenta que el cifrado asimétrico tiene limitaciones en el tamaño de los archivos que puede cifrar. Ademas puede llegar a ser bastante lento. Por esto utilizaremos cifrado hibrido en la parte 4.
 
 #### Parte 1: Criptografía Simétrica
-En esta parte de la práctica, deberás generar una clave simétrica utilizando el algoritmo AES con una longitud de clave de 256 bits. Luego, utilizarás esta clave para cifrar un archivo. Debereis entregar tanto el archivo original, como el archivo cifrado y la clave utilizada. Para comprobar que todo funciona correctamente recomiendo intentar descifrar en archivo cifrado y comprobar que resulta en el archivo original.
+En esta parte de la práctica, deberás generar una clave simétrica utilizando el algoritmo AES con una longitud de clave de 256 bits. Luego, utilizarás esta clave para cifrar un archivo. Debereis entregar el archivo original, la contraseña utilizada, el archivo cifrado y el archivo descifrado.
 
 ---
 
 #### Parte 2: Criptografía Asimétrica
-En esta parte de la práctica, deberás generar un par de claves asimétricas (pública y privada) utilizando el algoritmo RSA con una longitud de clave de 2048 bits. Luego, utilizarás la clave privada para firmar un archivo, generando así una firma digital. Deberás entregar tanto el archivo original, como la firma digital generada y las claves utilizadas. Para comprobar que todo funciona correctamente recomiendo intentar verificar la firma digital con la clave pública y comprobar que es válida para el archivo original.
+En esta parte de la práctica, deberás generar un par de claves asimétricas (pública y privada) utilizando el algoritmo RSA con una longitud de clave de 2048 bits. Luego, utilizarás la clave privada cifrar un archivo. Debereis entregar el archivo original, las claves generadas, el archivo cifrado y el archivo descifrado.
 
 ---
 
@@ -157,6 +157,8 @@ Por último, es importante mencionar que en la práctica, a menudo se combinan d
 \includegraphics[width=0.5\linewidth]{img/image.png}
 \end{center}
 
+En esta parte de la práctica, deberás firmar digitalmente un archivo utilizando un par de claves asimétricas (pública y privada) generadas con el algoritmo RSA. Luego, deberás cifrar el archivo original junto con su firma digital utilizando cifrado híbrido. Para ello, generarás una clave simétrica para cifrar el archivo y luego cifrarás esta clave simétrica con la clave pública del receptor.
+
 ---
 
 #### Formato de Entrega
@@ -166,13 +168,15 @@ Deberás entregar un archivo comprimido (zip) con el nombre `Practica1SI-<tu_nom
 - `Practica1SI-<tu_nombre>-<tu_apellido>`/
   - `Parte1/`
     - `<archivo>`                     (Archivo utilizado para esta parte)
-    - `simetrica.key`                 (clave de criptografía simétrica utilizada)
+    - `simetrica.key`                 ( Archivo de texto con la contraseña utilizada para crear la clave de criptografía simétrica)
     - `<archivo>.enc`                 (Archivo encriptado con la clave simétrica)
+    - `<archivo>.enc.dec`             (Archivo desencriptado con la clave simétrica)
   - `Parte2/`
     - `<archivo>`                     (Archivo utilizado para esta parte)
     - `asimetrica.priv`               (Clave privada generada)
     - `asimetrica.pub`                (Clave pública generada)
     - `<archivo>.enc`                 (Archivo encriptado con la clave privada)
+    - `<archivo>.enc.dec`             (Archivo desencriptado con la clave pública)
   - `Parte3/`
     - `<archivo>`                     (Archivo utilizado para esta parte)
     - `<archivo>.hash`                (Hash del archivo utilizado)
@@ -180,12 +184,12 @@ Deberás entregar un archivo comprimido (zip) con el nombre `Practica1SI-<tu_nom
     - `<archivo_modificado>.hash`     (Hash del archivo utilizado)
   - `Parte4/`
     - `<archivo>`                     (Archivo utilizado para esta parte)
-    - `firma.priv`                    (Clave privada utilizada para la firma)
-    - `firma.pub`                     (Clave pública utilizada para la firma)
+    - `firma.priv`                    (Clave privada utilizada)
+    - `firma.pub`                     (Clave pública utilizada)
     - `<archivo>.hash`                (Hash del archivo utilizado)
-    - `<archivo>.hash.sig`            (Firma del hash)
-    - `<archivo>.zip`                 (Comprimido con el archivo original y la firma del hash)
-    - `cifrado.key`                 (Clave simétrica cifrada)
+    - `<archivo>.hash.sig`            (Hash del archivo firmado con la clave privada)
+    - `<archivo>.zip`                 (Comprimido con el archivo original y el hash firmado)
+    - `cifrado.key`                   (Archivo de texto con la contraseña utilizada para crear la clave de criptografía simétrica)
     - `<archivo>.zip.enc`             (Comprimido encriptado)
 
 ---
