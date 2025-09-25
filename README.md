@@ -170,13 +170,13 @@ Deberás entregar un archivo comprimido (zip) con el nombre `Practica1SI-<tu_nom
     - `<archivo>`                     (Archivo utilizado para esta parte)
     - `simetrica.key`                 ( Archivo de texto con la contraseña utilizada para crear la clave de criptografía simétrica)
     - `<archivo>.enc`                 (Archivo encriptado con la clave simétrica)
-    - `<archivo>.enc.dec`             (Archivo desencriptado con la clave simétrica)
+    - `<archivo>.dec`             (Archivo desencriptado con la clave simétrica)
   - `Parte2/`
     - `<archivo>`                     (Archivo utilizado para esta parte)
     - `asimetrica.priv`               (Clave privada generada)
     - `asimetrica.pub`                (Clave pública generada)
     - `<archivo>.enc`                 (Archivo encriptado con la clave privada)
-    - `<archivo>.enc.dec`             (Archivo desencriptado con la clave pública)
+    - `<archivo>.dec`             (Archivo desencriptado con la clave pública)
   - `Parte3/`
     - `<archivo>`                     (Archivo utilizado para esta parte)
     - `<archivo>.hash`                (Hash del archivo utilizado)
@@ -184,12 +184,12 @@ Deberás entregar un archivo comprimido (zip) con el nombre `Practica1SI-<tu_nom
     - `<archivo_modificado>.hash`     (Hash del archivo utilizado)
   - `Parte4/`
     - `<archivo>`                     (Archivo utilizado para esta parte)
-    - `firma.priv`                    (Clave privada utilizada)
-    - `firma.pub`                     (Clave pública utilizada)
+    - `asimetrica.priv`                    (Clave privada utilizada)
+    - `asimetrica.pub`                     (Clave pública utilizada)
     - `<archivo>.hash`                (Hash del archivo utilizado)
-    - `<archivo>.hash.sig`            (Hash del archivo firmado con la clave privada)
+    - `<archivo>.hash.enc`            (Hash del archivo firmado con la clave privada)
     - `<archivo>.zip`                 (Comprimido con el archivo original y el hash firmado)
-    - `cifrado.key`                   (Archivo de texto con la contraseña utilizada para crear la clave de criptografía simétrica)
+    - `simetrica.key`                   (Archivo de texto con la contraseña utilizada para crear la clave de criptografía simétrica)
     - `<archivo>.zip.enc`             (Comprimido encriptado)
 
 ---
